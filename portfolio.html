@@ -146,7 +146,7 @@
       }
 
       .about-section {
-        min-height: 50vh;
+        min-height: 45vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -157,7 +157,7 @@
 
       .about-top {
         position: absolute;
-        top: 40;
+        top: 35px;
         right: 0;
         width: 140px;
         opacity: 0.7;
@@ -165,7 +165,7 @@
 
       .about-bottom {
         position: absolute;
-        bottom: 8;
+        bottom: 8px;
         left: 0;
         width: 270px;
         opacity: 0.7;
@@ -174,7 +174,7 @@
       .about-title {
         width: 100%;
         text-align: center;
-        font-family: Public Sans;
+        font-family: "Public Sans";
         font-size: 50px;
         font-weight: 800;
         color: #ffffff;
@@ -201,7 +201,7 @@
         font-size: 50px;
         color: #e6d6c8;
         margin-bottom: 10px;
-        font-family: "Public Sans", sans-serif;
+        font-family: Brick one;
         text-align: left;
         margin-left: -45px;
       }
@@ -210,14 +210,14 @@
         font-size: 32px;
         margin-bottom: 20px;
         color: #ddd;
-        font-family: Yeseva One;
+        font-family: "Yeseva One", serif;
         margin-left: -35px;
       }
 
       .about-left p {
         line-height: 1.7;
         color: #d0d0d0;
-        font-family: times new roman tm;
+        font-family: "Times New Roman", serif;
         font-size: 18px;
       }
 
@@ -230,10 +230,20 @@
         color: white;
         font-size: 16px;
         cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s ease;
       }
 
       .cv-btn:hover {
         background: #a7847c;
+        transform: translateY(-3px);
+      }
+
+      .btn-icon {
+        width: 20px;
+        height: auto;
       }
 
       .about-stats {
@@ -249,20 +259,40 @@
         border-radius: 25px;
         font-size: 16px;
         color: #ddd;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: 0.3s ease;
+      }
+
+      .stat:hover {
+        background: #5a5a5a;
+      }
+
+      .stat-icon {
+        width: 22px;
+        height: auto;
       }
 
       .stat span {
         font-weight: bold;
         margin-left: 6px;
       }
+
       #mypic-container {
         margin-left: 100px;
-        margin-top: -50px;/
+        margin-top: -50px;
       }
+
       .about-right img {
         width: 300px;
         border-radius: 10px;
         display: block;
+        transition: 0.4s ease;
+      }
+
+      .about-right img:hover {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
       }
 
       @media (max-width: 900px) {
@@ -273,10 +303,24 @@
 
         .about-left h2 {
           font-size: 36px;
+          margin-left: 0;
+          text-align: center;
         }
 
         .about-left h3 {
           font-size: 24px;
+          margin-left: 0;
+          text-align: center;
+        }
+
+        #mypic-container {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+
+        .cv-btn,
+        .stat {
+          justify-content: center;
         }
       }
 
@@ -305,7 +349,7 @@
       .skills-wrapper {
         display: flex;
         justify-content: center;
-        align-items: flex-start; /* Mahalaga ito para ma-adjust ang Soft Skills card */
+        align-items: flex-start;
         gap: 40px;
         max-width: 1200px;
         width: 100%;
@@ -561,10 +605,15 @@
               improve my abilities and gain more confidence.
             </p>
 
-            <button class="cv-btn">
+            <a
+              href="C:\Users\LENOVO\repositories\my_cv.pdf"
+              target="_blank"
+              class="cv-btn"
+              style="text-decoration: none"
+            >
               <img src="img/cv-icon.png" class="btn-icon" alt="CV" />
               View My CV
-            </button>
+            </a>
 
             <div class="about-stats">
               <div class="stat">
