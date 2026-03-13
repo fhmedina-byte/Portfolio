@@ -30,7 +30,7 @@
       }
 
       .hero {
-        height: 50vh;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -96,6 +96,10 @@
         margin-top: -4px;
         line-height: 0.9;
       }
+      .frontend-right p {
+        font-family: times new roman tm;
+        font-size: 25px;
+      }
 
       .frontend-right {
         max-width: 520px;
@@ -108,11 +112,6 @@
         margin-bottom: 20px;
         margin-left: auto;
         margin-right: auto;
-      }
-
-      .frontend-right p {
-        font-family: "Times New Roman", serif;
-        font-size: 25px;
       }
 
       .skills {
@@ -202,7 +201,7 @@
         font-size: 50px;
         color: #e6d6c8;
         margin-bottom: 10px;
-        font-family: "Brick one";
+        font-family: Brick one;
         text-align: left;
         margin-left: -45px;
       }
@@ -296,6 +295,35 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
       }
 
+      @media (max-width: 900px) {
+        .about-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .about-left h2 {
+          font-size: 36px;
+          margin-left: 0;
+          text-align: center;
+        }
+
+        .about-left h3 {
+          font-size: 24px;
+          margin-left: 0;
+          text-align: center;
+        }
+
+        #mypic-container {
+          margin-left: 0;
+          margin-top: 20px;
+        }
+
+        .cv-btn,
+        .stat {
+          justify-content: center;
+        }
+      }
+
       .skills-section {
         min-height: 90vh;
         background: #2f2f2f;
@@ -328,15 +356,15 @@
         flex-wrap: wrap;
       }
 
+      #soft-skills-card {
+        margin-top: -20px;
+      }
+
       .skill-card-container {
         position: relative;
         flex: 1;
         min-width: 300px;
         max-width: 500px;
-      }
-
-      #soft-skills-card {
-        margin-top: -20px;
       }
 
       .card-bg-img {
@@ -389,6 +417,74 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+      }
+
+      .contact-section {
+        min-height: 60vh;
+        background: #2f2f2f;
+        padding: 20px 10% 80px 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -50px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .contact-title {
+        width: 100%;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 800;
+        color: #ffffff;
+        text-transform: uppercase;
+        margin-top: -10px;
+        margin-bottom: 60px;
+        letter-spacing: 5px;
+        font-family: "Public Sans", sans-serif;
+      }
+
+      .contact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-left: 20px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .contact-icon {
+        width: 70px;
+        height: auto;
+      }
+
+      .contact-info h3 {
+        font-size: 24px;
+        color: #ffffff;
+        margin: 0;
+      }
+
+      .contact-info p {
+        font-size: 18px;
+        color: #cccccc;
+        margin-top: 5px;
+      }
+
+      @media (max-width: 768px) {
+        .tech-grid {
+          grid-template-columns: 1fr;
+        }
+        .skills-title,
+        .contact-title {
+          font-size: 35px;
+        }
+        .contact-section {
+          align-items: center;
+        }
       }
 
       .contact-section {
@@ -445,28 +541,6 @@
         color: #cccccc;
         margin-top: 5px;
       }
-
-      @media (max-width: 900px) {
-        .about-content {
-          flex-direction: column;
-          text-align: center;
-        }
-        .about-left h2, .about-left h3 {
-          margin-left: 0;
-          text-align: center;
-        }
-        #mypic-container {
-          margin-left: 0;
-          margin-top: 20px;
-        }
-        .frontend-container {
-            flex-direction: column;
-            text-align: center;
-        }
-        .frontend-left h1 {
-            margin-top: 0;
-        }
-      }
     </style>
   </head>
 
@@ -478,6 +552,7 @@
         Welcome To My <br />
         <span>Portfolio Website</span>
       </h1>
+
       <div class="website">🌐 github.com/fhmedina-byte</div>
     </section>
 
@@ -518,6 +593,7 @@
           <div class="about-left">
             <h2>Hello, I'm</h2>
             <h3>Francine Mae Medina</h3>
+
             <p>
               As a BSIT student, I combine what I learn in school with
               real-world experience to grow my knowledge and skills in the IT
@@ -529,18 +605,31 @@
               improve my abilities and gain more confidence.
             </p>
 
-            <a href="my_cv.pdf" target="_blank" class="cv-btn" style="text-decoration: none">
+            <a
+              href="C:\Users\LENOVO\repositories\my_cv.pdf"
+              target="_blank"
+              class="cv-btn"
+              style="text-decoration: none"
+            >
               <img src="img/cv-icon.png" class="btn-icon" alt="CV" />
               View My CV
             </a>
 
             <div class="about-stats">
               <div class="stat">
-                <img src="img/project-icon.png" class="stat-icon" alt="Project" />
+                <img
+                  src="img/project-icon.png"
+                  class="stat-icon"
+                  alt="Project"
+                />
                 Total Project <span>3</span>
               </div>
               <div class="stat">
-                <img src="img/seminar-icon.png" class="stat-icon" alt="Seminar" />
+                <img
+                  src="img/seminar-icon.png"
+                  class="stat-icon"
+                  alt="Seminar"
+                />
                 Seminars Attended <span>3</span>
               </div>
             </div>
@@ -552,9 +641,9 @@
         </div>
       </div>
     </section>
-
     <section class="skills-section">
       <h1 class="skills-title">MY SKILLS</h1>
+
       <div class="skills-wrapper">
         <div class="skill-card-container" id="soft-skills-card">
           <img src="img/card.png" class="card-bg-img" alt="Card Background" />
@@ -573,7 +662,9 @@
           <div class="skill-card-container">
             <img src="img/card.png" class="card-bg-img" alt="Card Background" />
             <div class="skill-text-overlay">
-              <h4 class="skill-category-title" style="font-size: 20px">Microsoft Office</h4>
+              <h4 class="skill-category-title" style="font-size: 20px">
+                Microsoft Office
+              </h4>
               <ul class="skill-list" style="font-size: 16px">
                 <li>Word</li>
                 <li>Excel</li>
@@ -585,7 +676,10 @@
           <div class="skill-card-container">
             <img src="img/card.png" class="card-bg-img" alt="Card Background" />
             <div class="skill-text-overlay">
-              <ul class="skill-list" style="justify-content: center; text-align: center">
+              <ul
+                class="skill-list"
+                style="justify-content: center; text-align: center"
+              >
                 <li style="justify-content: center">Canva</li>
               </ul>
             </div>
@@ -594,7 +688,9 @@
           <div class="skill-card-container">
             <img src="img/card.png" class="card-bg-img" alt="Card Background" />
             <div class="skill-text-overlay">
-              <h4 class="skill-category-title" style="font-size: 20px">Language</h4>
+              <h4 class="skill-category-title" style="font-size: 20px">
+                Language
+              </h4>
               <ul class="skill-list" style="font-size: 16px">
                 <li>HTML</li>
                 <li>CSS</li>
@@ -606,7 +702,10 @@
           <div class="skill-card-container">
             <img src="img/card.png" class="card-bg-img" alt="Card Background" />
             <div class="skill-text-overlay">
-              <ul class="skill-list" style="justify-content: center; text-align: center">
+              <ul
+                class="skill-list"
+                style="justify-content: center; text-align: center"
+              >
                 <li style="justify-content: center">UI Designer</li>
               </ul>
             </div>
@@ -617,6 +716,7 @@
 
     <section class="contact-section">
       <h1 class="contact-title">CONTACT ME</h1>
+
       <div class="contact-container">
         <div class="contact-item">
           <img src="img/email-icon.png" class="contact-icon" alt="Email" />
@@ -625,15 +725,25 @@
             <p>medinafrancinemae@gmail.com</p>
           </div>
         </div>
+
         <div class="contact-item">
-          <img src="img/location-icon.png" class="contact-icon" alt="Location" />
+          <img
+            src="img/location-icon.png"
+            class="contact-icon"
+            alt="Location"
+          />
           <div class="contact-info">
             <h3>Location</h3>
             <p>Pasig City, Philippines</p>
           </div>
         </div>
+
         <div class="contact-item">
-          <img src="img/linkedin-icon.png" class="contact-icon" alt="LinkedIn" />
+          <img
+            src="img/linkedin-icon.png"
+            class="contact-icon"
+            alt="LinkedIn"
+          />
           <div class="contact-info">
             <h3>LinkedIn</h3>
             <p>Medina Francine Mae</p>
@@ -650,6 +760,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
       }
+
       resizeCanvas();
       window.addEventListener("resize", resizeCanvas);
 
@@ -669,18 +780,23 @@
 
       function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
         particles.forEach((p) => {
           p.x += p.speedX;
           p.y += p.speedY;
+
           if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
           if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fillStyle = p.color;
           ctx.fill();
         });
+
         requestAnimationFrame(animate);
       }
+
       animate();
     </script>
   </body>
