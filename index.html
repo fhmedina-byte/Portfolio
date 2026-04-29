@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Francine Mae Medina</title>
 
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <style>
-    
       * {
         margin: 0;
         padding: 0;
@@ -30,7 +32,6 @@
         z-index: -1;
       }
 
-      /* Hero Section */
       .hero {
         height: 100vh;
         display: flex;
@@ -50,6 +51,7 @@
       .hero span {
         background: linear-gradient(to right, #ffffff, #ff9ad5);
         -webkit-background-clip: text;
+        background-clip: text;
         color: transparent;
       }
 
@@ -82,15 +84,20 @@
         flex-wrap: wrap;
       }
 
-      .frontend-left h1, .frontend-left h2 {
+      .frontend-left h1,
+      .frontend-left h2 {
         font-size: clamp(50px, 10vw, 110px);
         font-weight: 900;
         line-height: 0.9;
-        font-family: "League Spartan", sans-serif;
       }
 
-      .frontend-left h1 { color: #e6e6e6; }
-      .frontend-left h2 { color: #c4a27a; }
+      .frontend-left h1 {
+        color: #e6e6e6;
+      }
+
+      .frontend-left h2 {
+        color: #c4a27a;
+      }
 
       .frontend-right {
         max-width: 520px;
@@ -98,7 +105,6 @@
         line-height: 1.8;
         text-align: justify;
         color: #e6e6e6;
-        font-family: "Times New Roman", serif;
       }
 
       .skills {
@@ -106,6 +112,7 @@
         display: flex;
         gap: 15px;
         flex-wrap: wrap;
+        margin-left: 40px;
       }
 
       .skill {
@@ -115,19 +122,30 @@
         font-size: 16px;
       }
 
-      .circuit-top { position: absolute; top: 0; right: 0; width: 260px; opacity: 0.7; }
-      .circuit-bottom { position: absolute; bottom: 0; left: 0; width: 260px; opacity: 0.7; }
+      .circuit-top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 260px;
+        opacity: 0.7;
+      }
 
-    
+      .circuit-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 260px;
+        opacity: 0.7;
+      }
+
       .about-section {
-        min-height: 100vh;
+        min-height: 20vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 100px 20px;
+        padding: 40px 20px 100px 20px;
         background: #2f2f2f;
-        position: relative;
       }
 
       .about-title {
@@ -147,10 +165,28 @@
         flex-wrap: wrap;
       }
 
-      .about-left { max-width: 600px; }
-      .about-left h2 { font-size: 40px; color: #e6d6c8; margin-bottom: 5px; }
-      .about-left h3 { font-size: 30px; margin-bottom: 20px; color: #ddd; }
-      .about-left p { line-height: 1.7; color: #d0d0d0; font-size: 18px; margin-bottom: 25px; }
+      .about-left {
+        max-width: 600px;
+      }
+
+      .about-left h2 {
+        font-size: 40px;
+        color: #e6d6c8;
+        margin-bottom: 5px;
+      }
+
+      .about-left h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #ddd;
+      }
+
+      .about-left p {
+        line-height: 1.7;
+        color: #d0d0d0;
+        font-size: 18px;
+        margin-bottom: 25px;
+      }
 
       .cv-btn {
         padding: 12px 25px;
@@ -164,16 +200,36 @@
         transition: 0.3s;
       }
 
-      .cv-btn:hover { background: #a7847c; transform: translateY(-3px); }
+      .cv-btn:hover {
+        background: #a7847c;
+        transform: translateY(-3px);
+      }
 
-      .about-stats { margin-top: 35px; display: flex; gap: 20px; flex-wrap: wrap; }
-      .stat { background: #4a4a4a; padding: 12px 20px; border-radius: 20px; display: flex; align-items: center; gap: 10px; }
+      .about-stats {
+        margin-top: 35px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
 
-      .about-right img { width: 300px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+      .stat {
+        background: #4a4a4a;
+        padding: 12px 20px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-     
+      .about-right img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+
       .skills-section {
-        padding: 100px 20px;
+        padding: 10px 20px;
         background: #2f2f2f;
         display: flex;
         flex-direction: column;
@@ -198,120 +254,53 @@
         border-radius: 15px;
       }
 
-      .card-bg-img { width: 100%; height: auto; display: block; }
+      .card-bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
       .skill-text-overlay {
         position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         padding: 30px;
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
 
-      .skill-list { list-style: none; }
-      .skill-list li { margin-bottom: 8px; display: flex; align-items: center; }
-      .skill-list li::before { content: "•"; color: #c4a27a; margin-right: 10px; }
-
-    
-      .contact-section {
-        min-height: 60vh;
-        background: #2f2f2f;
-        padding: 20px 10% 80px 10%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: -50px;
-        position: relative;
-        z-index: 10;
+      .skill-list {
+        list-style: none;
       }
 
-      .contact-title {
-        width: 100%;
-        text-align: center;
-        font-size: 50px;
-        font-weight: 800;
-        color: #ffffff;
-        text-transform: uppercase;
-        margin-top: -10px;
-        margin-bottom: 60px;
-        letter-spacing: 5px;
-        font-family: "Public Sans", sans-serif;
-      }
-
-      .contact-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin-left: 20px;
-      }
-
-      .contact-item {
+      .skill-list li {
+        margin-bottom: 8px;
         display: flex;
         align-items: center;
-        gap: 25px;
       }
 
-      .contact-icon {
-        width: 70px;
-        height: auto;
-      }
-
-      .contact-info h3 {
-        font-size: 24px;
-        color: #ffffff;
-        margin: 0;
-      }
-
-      .contact-info p {
-        font-size: 18px;
-        color: #cccccc;
-        margin-top: 5px;
-      }
-
-      @media (max-width: 768px) {
-        .tech-grid {
-          grid-template-columns: 1fr;
-        }
-        .skills-title,
-        .contact-title {
-          font-size: 35px;
-        }
-        .contact-section {
-          align-items: center;
-        }
+      .skill-list li::before {
+        content: "•";
+        color: #c4a27a;
+        margin-right: 10px;
       }
 
       .contact-section {
         min-height: 50vh;
         background: #2f2f2f;
-        padding: 20px 10% 80px 10%;
+        padding: 60px 10% 80px 10%;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        margin-top: -50px;
-        position: relative;
-        z-index: 10;
-      }
-
-      .contact-title {
-        width: 100%;
-        text-align: center;
-        font-size: 50px;
-        font-weight: 800;
-        color: #ffffff;
-        text-transform: uppercase;
-        margin-bottom: 70px;
-        letter-spacing: 5px;
-        font-family: "Public Sans";
+        align-items: center;
       }
 
       .contact-container {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        width: auto;
-        margin-left: 20px;
+        align-items: center;
+        margin-left: 0;
       }
 
       .contact-item {
@@ -322,19 +311,15 @@
 
       .contact-icon {
         width: 70px;
-        height: auto;
       }
 
       .contact-info h3 {
         font-size: 24px;
-        color: #ffffff;
-        margin: 0;
       }
 
       .contact-info p {
         font-size: 18px;
-        color: #cccccc;
-        margin-top: 5px;
+        color: #ccc;
       }
     </style>
   </head>
@@ -343,20 +328,40 @@
     <canvas id="bg"></canvas>
 
     <section class="hero">
-      <h1>Welcome To My <br /><span>Portfolio Website</span></h1>
-      <div class="website">🌐 github.com/fhmedina-byte</div>
+      <h1 data-aos="fade-up">
+        Welcome To My <br /><span>Portfolio Website</span>
+      </h1>
+
+      <div class="website" data-aos="fade-up" data-aos-delay="200">
+        🌐 github.com/fhmedina-byte
+      </div>
     </section>
 
     <section class="frontend-section">
-      <img src="img/circuit-top.png" class="circuit-top" alt="" />
-      <img src="img/circuit-bottom.png" class="circuit-bottom" alt="" />
+      <img
+        src="img/circuit-top.png"
+        alt="circuit design top"
+        class="circuit-top"
+      />
+      <img
+        src="img/circuit-bottom.png"
+        alt="circuit design bottom"
+        class="circuit-bottom"
+      />
+
       <div class="frontend-container">
-        <div class="frontend-left">
+        <div class="frontend-left" data-aos="fade-right">
           <h1>Frontend</h1>
           <h2>Developer</h2>
         </div>
-        <div class="frontend-right">
-          <p>I am a Frontend Developer who creates websites that are not only visually appealing, but also easy to use and provide a smooth user experience.</p>
+
+        <div class="frontend-right" data-aos="fade-left">
+          <p>
+            I am a Frontend Developer who creates websites that are not only
+            visually appealing, but also easy to use and provide a smooth user
+            experience.
+          </p>
+
           <div class="skills">
             <div class="skill">HTML</div>
             <div class="skill">CSS</div>
@@ -367,31 +372,53 @@
     </section>
 
     <section class="about-section">
-      <h1 class="about-title">ABOUT ME</h1>
+      <h1 class="about-title" data-aos="fade-up">ABOUT ME</h1>
+
       <div class="about-content">
-        <div class="about-left">
+        <div class="about-left" data-aos="fade-right">
           <h2>Hello, I'm</h2>
           <h3>Francine Mae Medina</h3>
-          <p>As a BSIT student, I combine what I learn in school with real-world experience to grow my knowledge and skills in the IT field. I love building websites, designing creative layouts, and solving problems through code.</p>
+
+          <p>
+            As a BSIT student, I combine what I learn in school with real-world
+            experience to grow my knowledge and skills in the IT field.
+          </p>
+
           <a href="my_cv.pdf" target="_blank" class="cv-btn">
-            <img src="img/cv-icon.png" width="20" alt="" /> View My CV
+            <img src="img/cv-icon.png" width="20" alt="cv-icon" /> View My CV
           </a>
+
           <div class="about-stats">
-            <div class="stat"><img src="img/project-icon.png" width="20" alt="" /> Projects: <span>3</span></div>
-            <div class="stat"><img src="img/seminar-icon.png" width="20" alt="" /> Seminars: <span>3</span></div>
+            <div class="stat">
+              <img src="img/project-icon.png" width="20" alt="project-icon" />
+              Projects:
+              <span>3</span>
+            </div>
+
+            <div class="stat">
+              <img src="img/seminar-icon.png" width="20" alt="seminar-icon" />
+              Seminars:
+              <span>3</span>
+            </div>
           </div>
         </div>
-        <div class="about-right">
-          <img src="img/mypic.png" alt="Francine Mae Medina" />
+
+        <div class="about-right" data-aos="zoom-in">
+          <img src="img/mypic.png" alt="mypic" />
         </div>
       </div>
     </section>
 
     <section class="skills-section">
-      <h1 class="about-title">MY SKILLS</h1>
+      <h1 class="about-title" data-aos="fade-up">MY SKILLS</h1>
+
       <div class="skills-wrapper">
-        <div class="skill-card-container">
-          <img src="img/card.png" class="card-bg-img" alt="" />
+        <div class="skill-card-container" data-aos="flip-left">
+          <img
+            src="img/card.png"
+            alt="skill card background"
+            class="card-bg-img"
+          />
           <div class="skill-text-overlay">
             <h3>Soft Skills</h3>
             <ul class="skill-list">
@@ -402,8 +429,9 @@
             </ul>
           </div>
         </div>
-        <div class="skill-card-container">
-          <img src="img/card.png" class="card-bg-img" alt="" />
+
+        <div class="skill-card-container" data-aos="flip-right">
+          <img src="img/card.png" alt="card-bg-img" />
           <div class="skill-text-overlay">
             <h3>Technical</h3>
             <ul class="skill-list">
@@ -418,25 +446,35 @@
     </section>
 
     <section class="contact-section">
-      <h1 class="about-title">CONTACT ME</h1>
+      <h1 class="about-title" data-aos="fade-up">CONTACT ME</h1>
+
       <div class="contact-container">
-        <div class="contact-item">
-          <img src="img/email-icon.png" class="contact-icon" alt="" />
+        <div class="contact-item" data-aos="fade-up">
+          <img src="img/email-icon.png" alt="email icon" class="contact-icon" />
           <div class="contact-info">
             <h3>Email</h3>
             <p>medinafrancinemae@gmail.com</p>
           </div>
         </div>
-        <div class="contact-item">
-          <img src="img/location-icon.png" class="contact-icon" alt="" />
+
+        <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+          <img
+            src="img/location-icon.png"
+            alt="location icon"
+            class="contact-icon"
+          />
           <div class="contact-info">
             <h3>Location</h3>
             <p>Pasig City, Philippines</p>
           </div>
         </div>
-      </div>
-              <div class="contact-item">
-          <img src="img/linkedin-icon.png" class="contact-icon"  alt="LinkedIn" />
+
+        <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+          <img
+            src="img/linkedin-icon.png"
+            alt="linkedin icon"
+            class="contact-icon"
+          />
           <div class="contact-info">
             <h3>LinkedIn</h3>
             <p>Medina Francine Mae</p>
@@ -444,6 +482,15 @@
         </div>
       </div>
     </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1200,
+        once: true,
+      });
+    </script>
 
     <script>
       const canvas = document.getElementById("bg");
@@ -453,6 +500,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
       }
+
       resizeCanvas();
       window.addEventListener("resize", resizeCanvas);
 
@@ -472,18 +520,23 @@
 
       function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
         particles.forEach((p) => {
           p.x += p.speedX;
           p.y += p.speedY;
+
           if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
           if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fillStyle = p.color;
           ctx.fill();
         });
+
         requestAnimationFrame(animate);
       }
+
       animate();
     </script>
   </body>
