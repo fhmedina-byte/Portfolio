@@ -221,13 +221,9 @@
         gap: 10px;
       }
 
-      .about-right img {
-        width: 300px;
-        height: 300px;
-        object-fit: cover;
-        border-radius: 15px;
-      }
+      .about-right img { width: 300px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
+     
       .skills-section {
         padding: 10px 20px;
         background: #2f2f2f;
@@ -254,12 +250,7 @@
         border-radius: 15px;
       }
 
-      .card-bg-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
+      .card-bg-img { width: 100%; height: auto; display: block; }
 
       .skill-text-overlay {
         position: absolute;
@@ -299,8 +290,11 @@
       }
 
       .contact-container {
-        align-items: center;
-        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: auto;
+        margin-left: 20px;
       }
 
       .contact-item {
@@ -338,17 +332,8 @@
     </section>
 
     <section class="frontend-section">
-      <img
-        src="img/circuit-top.png"
-        alt="circuit design top"
-        class="circuit-top"
-      />
-      <img
-        src="img/circuit-bottom.png"
-        alt="circuit design bottom"
-        class="circuit-bottom"
-      />
-
+      <img src="img/circuit-top.png" class="circuit-top" alt="" />
+      <img src="img/circuit-bottom.png" class="circuit-bottom" alt="" />
       <div class="frontend-container">
         <div class="frontend-left" data-aos="fade-right">
           <h1>Frontend</h1>
@@ -385,26 +370,16 @@
           </p>
 
           <a href="my_cv.pdf" target="_blank" class="cv-btn">
-            <img src="img/cv-icon.png" width="20" alt="cv-icon" /> View My CV
+            <img src="img/cv-icon.png" width="20" alt="" /> View My CV
           </a>
 
           <div class="about-stats">
-            <div class="stat">
-              <img src="img/project-icon.png" width="20" alt="project-icon" />
-              Projects:
-              <span>3</span>
-            </div>
-
-            <div class="stat">
-              <img src="img/seminar-icon.png" width="20" alt="seminar-icon" />
-              Seminars:
-              <span>3</span>
-            </div>
+            <div class="stat"><img src="img/project-icon.png" width="20" alt="" /> Projects: <span>3</span></div>
+            <div class="stat"><img src="img/seminar-icon.png" width="20" alt="" /> Seminars: <span>3</span></div>
           </div>
         </div>
-
-        <div class="about-right" data-aos="zoom-in">
-          <img src="img/mypic.png" alt="mypic" />
+        <div class="about-right">
+          <img src="img/mypic.png" alt="Francine Mae Medina" />
         </div>
       </div>
     </section>
@@ -413,12 +388,8 @@
       <h1 class="about-title" data-aos="fade-up">MY SKILLS</h1>
 
       <div class="skills-wrapper">
-        <div class="skill-card-container" data-aos="flip-left">
-          <img
-            src="img/card.png"
-            alt="skill card background"
-            class="card-bg-img"
-          />
+        <div class="skill-card-container">
+          <img src="img/card.png" class="card-bg-img" alt="" />
           <div class="skill-text-overlay">
             <h3>Soft Skills</h3>
             <ul class="skill-list">
@@ -429,9 +400,8 @@
             </ul>
           </div>
         </div>
-
-        <div class="skill-card-container" data-aos="flip-right">
-          <img src="img/card.png" alt="card-bg-img" />
+        <div class="skill-card-container">
+          <img src="img/card.png" class="card-bg-img" alt="" />
           <div class="skill-text-overlay">
             <h3>Technical</h3>
             <ul class="skill-list">
@@ -449,32 +419,23 @@
       <h1 class="about-title" data-aos="fade-up">CONTACT ME</h1>
 
       <div class="contact-container">
-        <div class="contact-item" data-aos="fade-up">
-          <img src="img/email-icon.png" alt="email icon" class="contact-icon" />
+        <div class="contact-item">
+          <img src="img/email-icon.png" class="contact-icon" alt="" />
           <div class="contact-info">
             <h3>Email</h3>
             <p>medinafrancinemae@gmail.com</p>
           </div>
         </div>
-
-        <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
-          <img
-            src="img/location-icon.png"
-            alt="location icon"
-            class="contact-icon"
-          />
+        <div class="contact-item">
+          <img src="img/location-icon.png" class="contact-icon" alt="" />
           <div class="contact-info">
             <h3>Location</h3>
             <p>Pasig City, Philippines</p>
           </div>
         </div>
-
-        <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
-          <img
-            src="img/linkedin-icon.png"
-            alt="linkedin icon"
-            class="contact-icon"
-          />
+      </div>
+              <div class="contact-item">
+          <img src="img/linkedin-icon.png" class="contact-icon"  alt="LinkedIn" />
           <div class="contact-info">
             <h3>LinkedIn</h3>
             <p>Medina Francine Mae</p>
